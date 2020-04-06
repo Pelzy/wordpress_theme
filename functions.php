@@ -17,3 +17,8 @@ function awesome_theme_setup(){
 }
 
 add_action('init', 'awesome_theme_setup');
+
+add_action('init', 'awesome_theme_setup');
+
+
+//update
