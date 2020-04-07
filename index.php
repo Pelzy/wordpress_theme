@@ -1,15 +1,21 @@
 <?php get_header(); ?>
-    <?php 
-    if(have_posts() ):
 
-    while(have_posts() ): the_post(); ?>
-      <h3> <?php the_title(); ?></h3>
-        <small>Posted on: <?php the_time('F j, Y'); ?> at <?php the_time('g:i'); ?>, in <?php the_category(); ?></small>
-      <p> <?php the_content(); ?></p>
-      <hr>
+  <div class="row">
+  <div class="col-xs-12 col-sm-8">
+  <?php 
+    if(have_posts() ):
+    while(have_posts() ): the_post(); //echo 'THIS IS THE FORMAT: ' .get_post_format(); ?>
+  <?php get_template_part('content', get_post_format());?>
+
   <?php  endwhile;
 
-endif;
-
+  endif;
 ?>
+</div>
+
+<div class="col-xs-12 col-sm-4">
+<?php get_sidebar(); ?>
+</div>
+</div>
+
 <?php get_footer(); ?>
